@@ -2,8 +2,8 @@
  * @file Discrete.h
  * @author bab2min (bab2min@gmail.com)
  * @brief 
- * @version 0.3.3
- * @date 2021-03-31
+ * @version 0.4.1
+ * @date 2022-08-13
  *
  * @copyright Copyright (c) 2020-2021
  * 
@@ -264,7 +264,7 @@ namespace Eigen
 					{
 						EIGENRAND_CHECK_INFINITY_LOOP();
 						_Scalar cands = (_Scalar)(rx & bitmask);
-						if (cands <= pdiff) return cands;
+						if (cands <= pdiff) return cands + pmin;
 						if (bitcnt + bitsize < 32)
 						{
 							rx >>= bitsize;

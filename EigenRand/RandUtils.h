@@ -2,8 +2,8 @@
  * @file RandUtils.h
  * @author bab2min (bab2min@gmail.com)
  * @brief 
- * @version 0.3.3
- * @date 2021-03-31
+ * @version 0.4.1
+ * @date 2022-08-13
  * 
  * @copyright Copyright (c) 2020-2021
  * 
@@ -55,7 +55,7 @@ namespace Eigen
 		struct scalar_rng_adaptor
 		{
 			static_assert(
-				Rand::IsScalarRandomEngine<
+				Rand::IsScalarFullBitRandomEngine<
 				typename std::remove_reference<Rng>::type
 				>::value ||
 				Rand::IsPacketRandomEngine<
@@ -95,7 +95,7 @@ namespace Eigen
 		struct scalar_rng_adaptor<Gen, _Scalar, Rng, true>
 		{
 			static_assert(
-				Rand::IsScalarRandomEngine<
+				Rand::IsScalarFullBitRandomEngine<
 				typename std::remove_reference<Rng>::type
 				>::value ||
 				Rand::IsPacketRandomEngine<
